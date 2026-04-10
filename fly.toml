@@ -16,9 +16,7 @@ console_command = 'php /var/www/html/artisan tinker'
   SESSION_SECURE_COOKIE = 'false'
   DB_CONNECTION = 'sqlite'
   DB_DATABASE = '/data/database.sqlite'
-
-[deploy]
-  release_command = "sh -c 'mkdir -p /data && touch /data/database.sqlite && php artisan migrate --force'"
+  ENTRYPOINT = '/var/www/html/docker-entrypoint.sh'
 
 [mounts]
   source = 'sqlite_data'

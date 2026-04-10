@@ -18,7 +18,7 @@ console_command = 'php /var/www/html/artisan tinker'
   DB_DATABASE = '/data/database.sqlite'
 
 [deploy]
-  release_command = "php artisan migrate --force"
+  release_command = "sh -c 'touch /data/database.sqlite && php artisan migrate --force'"
 
 [mounts]
   source = 'sqlite_data'
